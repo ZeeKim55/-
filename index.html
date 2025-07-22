@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>แบบประเมินหลักสูตรสุขาภิบาล</title>
+  <style>
+    body { font-family: sans-serif; background: #f5f5f5; padding: 20px; }
+    form { background: white; padding: 20px; border-radius: 10px; max-width: 800px; margin: auto; }
+    h2 { text-align: center; color: green; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 10px; text-align: center; }
+    th { background-color: #e0f2f1; }
+    .section { margin-top: 20px; }
+    button { background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; display: block; margin: 20px auto 0; }
+  </style>
+</head>
+<body>
+  <form id="surveyForm">
+    <h2>แบบประเมินความพึงพอใจต่อการอบรมหลักสูตรสุขาภิบาล</h2>
+
+    <div class="section">
+      <p>เพศของผู้ตอบแบบสอบถาม:</p>
+      <label><input type="radio" name="gender" value="ชาย" required> ชาย</label>
+      <label><input type="radio" name="gender" value="หญิง"> หญิง</label>
+      <label><input type="radio" name="gender" value="อื่น ๆ"> อื่น ๆ</label>
+    </div>
+
+    <div class="section">
+      <p>ช่วงอายุของผู้ตอบแบบสอบถาม:</p>
+      <select name="age" required>
+        <option value="">-- โปรดเลือก --</option>
+        <option value="ต่ำกว่า 20 ปี">ต่ำกว่า 20 ปี</option>
+        <option value="21-30 ปี">21-30 ปี</option>
+        <option value="31-40 ปี">31-40 ปี</option>
+        <option value="41-50 ปี">41-50 ปี</option>
+        <option value="มากกว่า 50 ปี">มากกว่า 50 ปี</option>
+      </select>
+    </div>
+
+    <div class="section">
+      <p>หลักสูตรการอบรม:</p>
+      <label><input type="radio" name="course" value="ผู้สัมผัสอาหาร" required> ผู้สัมผัสอาหาร</label>
+      <label><input type="radio" name="course" value="ผู้ประกอบกิจการ"> ผู้ประกอบกิจการ</label>
+    </div>
+
+    <div class="section">
+      <p><strong>โปรดเลือกคำตอบที่ตรงกับความพึงพอใจ / ความรู้ความเข้าใจ / การนำไปใช้ของท่านเพียงระดับเดียว</strong></p>
+      <table>
+        <tr><th>หัวข้อ</th><th>มากที่สุด</th><th>มาก</th><th>ปานกลาง</th><th>น้อย</th><th>น้อยที่สุด</th></tr>
+        <tr>
+          <td>การกำหนดวันจัดประชุม</td>
+          <td><input type="radio" name="q1" value="มากที่สุด" required></td>
+          <td><input type="radio" name="q1" value="มาก"></td>
+          <td><input type="radio" name="q1" value="ปานกลาง"></td>
+          <td><input type="radio" name="q1" value="น้อย"></td>
+          <td><input type="radio" name="q1" value="น้อยที่สุด"></td>
+        </tr>
+        <tr>
+          <td>เอกสารการประชุม</td>
+          <td><input type="radio" name="q2" value="มากที่สุด" required></td>
+          <td><input type="radio" name="q2" value="มาก"></td>
+          <td><input type="radio" name="q2" value="ปานกลาง"></td>
+          <td><input type="radio" name="q2" value="น้อย"></td>
+          <td><input type="radio" name="q2" value="น้อยที่สุด"></td>
+        </tr>
+        <tr>
+          <td>ความเหมาะสมของเนื้อหาในการฝึกอบรม</td>
+          <td><input type="radio" name="q3" value="มากที่สุด" required></td>
+          <td><input type="radio" name="q3" value="มาก"></td>
+          <td><input type="radio" name="q3" value="ปานกลาง"></td>
+          <td><input type="radio" name="q3" value="น้อย"></td>
+          <td><input type="radio" name="q3" value="น้อยที่สุด"></td>
+        </tr>
+        <tr>
+          <td>ความเหมาะสมของเวลาในการอบรม</td>
+          <td><input type="radio" name="q4" value="มากที่สุด" required></td>
+          <td><input type="radio" name="q4" value="มาก"></td>
+          <td><input type="radio" name="q4" value="ปานกลาง"></td>
+          <td><input type="radio" name="q4" value="น้อย"></td>
+          <td><input type="radio" name="q4" value="น้อยที่สุด"></td>
+        </tr>
+        <tr>
+          <td>สามารถนำความรู้ไปใช้ในการปฏิบัติงาน</td>
+          <td><input type="radio" name="q5" value="มากที่สุด" required></td>
+          <td><input type="radio" name="q5" value="มาก"></td>
+          <td><input type="radio" name="q5" value="ปานกลาง"></td>
+          <td><input type="radio" name="q5" value="น้อย"></td>
+          <td><input type="radio" name="q5" value="น้อยที่สุด"></td>
+        </tr>
+      </table>
+    </div>
+
+    <button type="submit">ส่งแบบประเมิน</button>
+  </form>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyG564EFLsjutGZAAWmTzSfIk5p1cWh_w0nOt2-8DT1sIrY0r183AQoV7jf0p50pJtT0Q/exec"; // 👈 เปลี่ยนตรงนี้
+
+      const form = document.getElementById("surveyForm");
+
+      form.addEventListener("submit", async function(e) {
+        e.preventDefault();
+        console.log("Form submitted");
+
+        const data = {
+          gender: form.gender.value,
+          age: form.age.value,
+          course: form.course.value,
+          q1: form.q1.value,
+          q2: form.q2.value,
+          q3: form.q3.value,
+          q4: form.q4.value,
+          q5: form.q5.value
+        };
+
+        try {
+          const res = await fetch(WEB_APP_URL, {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: { "Content-Type": "application/json" }
+          });
+
+          const result = await res.json();
+          if (result.result === "Success") {
+            alert("ส่งข้อมูลสำเร็จ ขอบคุณค่ะ/ครับ");
+            form.reset();
+          } else {
+            throw new Error(result.error);
+          }
+        } catch (err) {
+          alert("เกิดข้อผิดพลาด กรุณาลองใหม่ภายหลัง");
+          console.error("Error:", err);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
